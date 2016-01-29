@@ -59,7 +59,6 @@
 							}).error(function() {
 								alert('ERROR');
 							});
-
 						};
 
 						$scope.saveCard = function(selected) {

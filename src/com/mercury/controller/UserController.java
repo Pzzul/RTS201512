@@ -92,7 +92,7 @@ public class UserController {
 	public List<Order> getOrdersByUserId(@PathVariable int userId) {
 		return this.customUserDetailsService.getOrdersByUserId(userId);
 	}
-
+	
 	@RequestMapping(value = "/member/hello", method = RequestMethod.GET)
 	public @ResponseBody
 	ModelAndView memberHello() {
@@ -106,7 +106,7 @@ public class UserController {
 	@RequestMapping(value = "/member/dashboard", method = RequestMethod.GET)
 	public ModelAndView userDashBoard() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/member/dashboard");
+		mav.setViewName("/member/dashboardIndex");
 		mav.addObject("title", "Hello, "
 				+ CustomUserDetailsService.currentUserDetails().getUsername()
 				+ "! welcome to dashboard");
@@ -115,7 +115,7 @@ public class UserController {
 		mav.addObject("orders", this.getOrdersByUserId(this.getUser().getUserId()).size());
 		return mav;
 	}
-
+	
 	@RequestMapping(value = "/member/creditcard", method = RequestMethod.GET)
 	public ModelAndView userCreditcard() {
 		ModelAndView mav = new ModelAndView();
@@ -151,6 +151,28 @@ public class UserController {
 		System.out.println(CustomUserDetailsService.currentUserDetails()
 				.getUsername());
 		return mav;
+	}
+	
+	/**************************RTS201512*************************************/
+	
+	@RequestMapping(value = "/member/search", method = RequestMethod.GET)
+	public ModelAndView searchPannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashSearch");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/profile", method = RequestMethod.GET)
+	public ModelAndView profilePannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/profile1");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/profileData", method = RequestMethod.GET)
+	@ResponseBody
+	public User getprofile() {
+		return getUser();
 	}
 
 	@RequestMapping(value = "/register/newuser", method = RequestMethod.POST)
@@ -251,12 +273,7 @@ public class UserController {
 	@RequestMapping(value = "/member/order", method = RequestMethod.GET)
 	public ModelAndView memberOrder() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/member/order");
-		mav.addObject("title", "Hello, "
-				+ CustomUserDetailsService.currentUserDetails().getUsername());
-		mav.addObject("username", this.getUser().getEmail());
-		mav.addObject("orderHistory",
-		this.getOrdersByUserId(this.getUser().getUserId()));
+		mav.setViewName("/member/order1");
 		return mav;
 	}
 
