@@ -38,7 +38,7 @@
 <script src="<c:url value="/resource/js/angular/angular.js"/>"></script>
  <style>
   .body-class {
-  	background-image:url(resource/image/Steam_train.jpg);
+  	background-image:url(resource/image/traintrack1.jpg);
   	background-size: cover;
     background-repeat: no-repeat;
 	}
