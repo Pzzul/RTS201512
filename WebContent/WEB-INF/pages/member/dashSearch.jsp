@@ -3,19 +3,18 @@
 	<div class="col-md-9 col-md-offset-1">
 		<form class="form-inline">
 			<div class="form-group">
-				<label for="exampleInputName2">From</label> <input type="text"
-					class="form-control" id="exampleInputName2" placeholder="From">
+				<label\>From</label> <input ng-model="departureStation" type="text"
+					class="form-control" placeholder="From">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputEmail2">To</label> <input type="email"
-					class="form-control" id="exampleInputEmail2" placeholder="To">
+				<label>To</label> <input ng-model="arrivalStation" type="email"
+					class="form-control" placeholder="To">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputEmail2">Depart Date</label> <input
-					type="email" class="form-control" id="exampleInputEmail2"
-					placeholder="mm/dd/yy">
+				<label>Departure Date</label> <input class="form-control"
+					placeholder="mm/dd/yy" ng-model="departureDate">
 			</div>
-			<button type="submit" class="btn btn-default">Search</button>
+			<button class="btn btn-default" ng-click="searchSubmit">Search</button>
 		</form>
 	</div>
 </div>

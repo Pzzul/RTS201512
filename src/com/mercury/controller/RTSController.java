@@ -396,6 +396,7 @@ public class RTSController {
 
 		int departureStation = Integer.parseInt(request.getParameter("departureStation")); 
 		int arrivalStation = Integer.parseInt(request.getParameter("arrivalStation"));
+		System.out.println(request.getParameter("departureDate"));
 		Date departureDate = new Date(Long.parseLong(request.getParameter("departureDate")));
 		//System.out.println(departureDate.getTime());
 		return this.railwayService.getScheduleListByTrainAndDate(departureStation, arrivalStation, departureDate);
