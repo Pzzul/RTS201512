@@ -364,7 +364,7 @@ public class UserController {
 		mav.addObject("train1", tsl.get(0).getAvailableTickets());
 		mav.addObject("train2", tsl.get(4).getAvailableTickets());
 		mav.addObject("train3", tsl.get(10).getAvailableTickets());
-		mav.addObject("train4", tsl.get(27).getAvailableTickets());
+		//mav.addObject("train4", tsl.get(27).getAvailableTickets());
 		mav.addObject("actived", this.customUserDetailsService.countActivedUser());
 		return mav;
 	}

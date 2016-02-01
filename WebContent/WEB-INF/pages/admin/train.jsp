@@ -15,7 +15,8 @@
      <script type="text/javascript" src="<c:url value="/resource/newSource/js/jquery-1.10.2.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/resource/newSource/bootstrap/js/bootstrap.min.js"/>"></script>
     
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script>
 	$(document).ready(function() {
@@ -31,6 +32,9 @@
 		}
 		return true;
 	}
+
+
+	
 	</script>
 
 	<script>
@@ -78,9 +82,9 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">12</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">2 New Messages</li>
+                            <li class="dropdown-header">12 New Messages</li>
                             <li class="message-preview">
                                 <a href="#">
                                     <span class="avatar"><i class="fa fa-bell"></i></span>
