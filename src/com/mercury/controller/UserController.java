@@ -277,7 +277,7 @@ public class UserController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/member/checkout", method = { RequestMethod.POST,
+	@RequestMapping(value = "/member/checkout1", method = { RequestMethod.POST,
 			RequestMethod.GET })
 	public ModelAndView memberCheckout() {
 		ModelAndView mav = new ModelAndView();
