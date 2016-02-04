@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,6 +16,7 @@
     <script type="text/javascript" src="<c:url value="/resource/newSource/bootstrap/js/bootstrap.min.js"/>"></script>
 
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
+    <!-- 
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
     <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
     <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
@@ -59,7 +60,6 @@
 							}).error(function() {
 								alert('ERROR');
 							});
-
 						};
 
 						$scope.saveCard = function(selected) {
@@ -105,8 +105,8 @@
 
 					});
 	</script>
-</head>
-<body>
+</head> 
+<body> 
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">            
             <div class="navbar-header">
@@ -176,6 +176,7 @@
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Your Creditcards</h3>
                         </div>
                         <section class="content"> <!-- Info boxes -->
+                        
 			<div ng-app="creditcardModule" ng-controller="creditcardController">
 				<select class="OptionCtrl" ng-model="selected"
 					ng-options="creditcard.cardNo for creditcard in creditcardData">
@@ -248,10 +249,10 @@
                         </div>
                     </div>
                 </div>
-        </div>
+       <!--   </div>
 
-     </div>   
+     </div>  --> 
     <!-- /#wrapper -->
-
+<!-- 
 </body>
-</html>
+</html> -->
