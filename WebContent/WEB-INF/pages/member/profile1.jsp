@@ -1,5 +1,5 @@
-<div>
-	<table>
+<div class="col-sm-offset-4">
+	<table class="table">
 		<tr>
 			<td>User Name: </td>
 			<td>{{profile.firstName}} {{profile.lastName}}</td>
@@ -24,4 +24,7 @@
 			<td>Zip Code:</td>
 			<td>{{profile.zipCode}}</td>
 	</table>
+	<div class="col-sm-offset-6">
+	<button class="btn btn-default btn-sm">Edit</button>
+	</div>
 </div>

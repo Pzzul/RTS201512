@@ -1,5 +1,6 @@
 package com.mercury.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import com.mercury.beans.Order;
 import com.mercury.beans.Station;
 import com.mercury.beans.Ticket;
 import com.mercury.beans.TrainSchedule;
+import com.mercury.beans.Transit;
 import com.mercury.beans.User;
 import com.mercury.beans.UserRole;
 import com.mercury.mail.MailUtil;
@@ -154,11 +156,25 @@ public class UserController {
 	}
 	
 	/**************************RTS201512*************************************/
+	@RequestMapping(value = "/member/dashCheckout", method = RequestMethod.GET)
+	public ModelAndView checkoutPannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashCheckout");
+		return mav;
+	}
+	
 	
 	@RequestMapping(value = "/member/search", method = RequestMethod.GET)
 	public ModelAndView searchPannel() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/member/dashSearch");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/cart-page", method = RequestMethod.GET)
+	public ModelAndView cartPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashCart");
 		return mav;
 	}
 	
@@ -173,6 +189,12 @@ public class UserController {
 	@ResponseBody
 	public User getprofile() {
 		return getUser();
+	}
+	
+	@RequestMapping(value = "/resource/clear/cart", method = RequestMethod.GET)
+	@ResponseBody
+	public void clearCart(HttpSession session){
+		getCartService(session).clearCart();
 	}
 
 	@RequestMapping(value = "/register/newuser", method = RequestMethod.POST)
@@ -290,11 +312,21 @@ public class UserController {
 		return mav;
 	}
 	
+	//rts201512
+	@RequestMapping(value = "/resource/get/time-by-station-train", method = RequestMethod.POST)
+	@ResponseBody
+	public Timestamp getTransitByTrainAndStation(HttpServletRequest request){
+		int trainNo = Integer.parseInt(request.getParameter("trainNo"));
+		int stationNo = Integer.parseInt(request.getParameter("stationNo"));
+		Transit t = railwayService.getTransitByStationAndTrainNo(stationNo, trainNo);
+		return t.getArrivalTime();
+	}
 	
 
 	@RequestMapping(value = "/resource/order/submit/", method = RequestMethod.POST)
 	public @ResponseBody
 	Order memberSubmitOrder(HttpServletRequest request, HttpSession session) {
+		
 		String firstName = (String) request.getParameter("firstName");
 		String lastName = (String) request.getParameter("lastName");
 		String cardNo = (String) request.getParameter("cardNo");

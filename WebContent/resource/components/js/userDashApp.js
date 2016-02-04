@@ -19,12 +19,30 @@ dashApp.config(['$routeProvider',
 		 templateUrl: 'order.html',
 		 controller: 'dashOrderCtrl'
 	  }).
+	  when('/cart-page', {
+		  templateUrl: 'cart-page.html',
+		  controller: 'dashCartPage'
+	  }).
+	  when('/creditcard', {
+		  templateUrl: 'creditcard.html',
+		  controller: 'creditcardController'
+	  }).
+	  when('/checkout', {
+		 templateUrl: 'dashCheckout.html',
+		 controller: 'dashCheckoutCtrl'
+	  }).
 	  otherwise({
 		  redirectTo: '/search'
 	  });
 }]);
 
-dashApp.controller('dashCartCtrl', ['$scope', '$http', function($scope, $http){
+dashApp.controller('dashIndexCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.unpaidOrders = [];
+	$scope.refresh = function(){$http.post("/MyRTS/resource/cart/get/all", {}).success(function(data){
+		$scope.unpaidOrders = data;
+		console.log($scope.unpaidOrders);
+	});};
+	$scope.refresh();
+	$scope.$on('refresh cart', $scope.refresh);
 	$scope.showCart = false;
 }]);

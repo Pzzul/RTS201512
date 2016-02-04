@@ -36,7 +36,11 @@ public class Cart {
 	public static String getCartName() {
 		return CART_NAME;
 	}
-
+	
+	public void clearCart(){
+		session.setAttribute(CART_NAME, null); 
+	}
+	
 	public void addTicket(Ticket t, int qty){
 		if(this.hpTickets.containsKey(t))
 			this.hpTickets.put(t, this.hpTickets.get(t)+qty);

@@ -41,7 +41,10 @@ public class CartService {
 	public boolean isEmpty(){
 		return this.cart.getHpTickets().size() == 0;
 	}
-	
+	public void clearCart(){
+		cart.clearCart();
+		cart = Cart.getCart(session);
+	}
 	public CartService addTicket(Transit departureTransit, Transit arrivalTransit, int trainNo, 
 			double price, Date departureDateTime, int qty){
 		Date departureDate = JavaUtil.convertDateTimeWithoutTime(departureDateTime);
