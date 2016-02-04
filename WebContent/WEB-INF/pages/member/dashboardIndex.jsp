@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="<c:url value="/resource/js/angucomplete-alt/angucomplete-alt.css"/>" />
 	<link rel="stylesheet" href="<c:url value="/resource/js/angular-datepicker/dist/angular-datepicker.min.css"/>" rel="stylesheet">
 	
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href="<c:url value="/resource/newSource/css/Montserrat-400-700.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resource/newSource/css/latino.css"/>" rel="stylesheet" type="text/css">
 
 	<script type="text/javascript" src="<c:url value="/resource/newSource/js/jquery.js"/>"></script>   
     <script type="text/javascript" src="<c:url value="/resource/newSource/js/bootstrap.min.js"/>"></script>
@@ -62,7 +62,7 @@
 	            <li><a href="<c:url value="#/orders"/>">Past Orders</a></li>
 	            <li><a href="<c:url value="#/creditcard"/>">Payment Method</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Sign Out</a></li>
+	            <li><a href="/MyRTS/j_spring_security_logout">Sign Out</a></li>
 	          </ul>
 	        </li>
 	        <li><a href="#/search">Booking a trip</a><li>

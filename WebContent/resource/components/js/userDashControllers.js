@@ -271,7 +271,7 @@ dashControllers.controller("creditcardController", function($scope, $http) {
 
 });
 
-dashControllers.controller("dashCheckoutCtrl",['$scope', '$http', function($scope, $http){	
+dashControllers.controller("dashCheckoutCtrl",['$scope', '$http', '$location', function($scope, $http, $location){	
 	$scope.cc={};
 	
 	console.log("dashCheckoutCtrl is created");
@@ -288,6 +288,7 @@ dashControllers.controller("dashCheckoutCtrl",['$scope', '$http', function($scop
   		}).success(function (data) {
   			 console.log(data);
   			 $scope.$emit('refresh cart');
+  			 $location.path('/checkout/success');
     	});
 	};
 		
