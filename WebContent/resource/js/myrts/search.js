@@ -73,7 +73,7 @@
   	      	$scope.canShowAddToCart = false;
   	    };
   	    
-  	  $scope.resetForm = function () {
+  	    $scope.resetForm = function () {
 	      	$scope.trainSearch = angular.copy(oriTrainSearch);
 	      	$scope.fmSearchTrain.$setPristine();
 	      	$scope.resetResult();

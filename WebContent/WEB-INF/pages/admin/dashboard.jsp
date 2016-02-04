@@ -11,10 +11,11 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/resource/newSource/bootstrap/css/bootstrap.min.css"/>">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resource/newSource/font-awesome/css/font-awesome.min.css" />">
     <link rel="stylesheet" type="text/css" href="<c:url value="/resource/newSource/css/local.css" />">
-
+   
     <script type="text/javascript" src="<c:url value="/resource/newSource/js/jquery-1.10.2.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/resource/newSource/bootstrap/js/bootstrap.min.js"/>"></script>
-
+	
+	
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
     <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
@@ -31,8 +32,8 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">            
+<div id="page-wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">            
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -43,19 +44,19 @@
                 <a class="navbar-brand" href="dashboard.html">Administrator Page</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li class="active"><a href="dashboard.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="active"><a href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                     <li><a href="order.html"><i class="fa fa-tasks"></i> Order</a></li>                    
-                    <li><a href="train.html"><i class="fa fa-globe"></i> Train</a></li>
-                    <li><a href="schedule.html"><i class="fa fa-list-ol"></i> Schedule</a></li>
-                    <li><a href="station.html"><i class="fa fa-font"></i> Station</a></li> 
-                    <li><a href="userTable.html"><i class="fa fa-list-ul"></i> UserTable</a></li>                   
+                    <li><a href="train.html"><i class="fa fa-train"></i> Train</a></li>
+                    <li><a href="schedule.html"><i class="fa fa-refresh fa-spin"></i> Schedule</a></li>
+                    <li><a href="station.html"><i class="fa fa-fort-awesome"></i> Station</a></li> 
+                    <li><a href="userTable.html"><i class="fa fa-table"></i> UserTable</a></li>                  
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">3</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">2 New Messages</li>
+                            <li class="dropdown-header">3 New Messages</li>
                             <li class="message-preview">
                                 <a href="#">
                                     <span class="avatar"><i class="fa fa-bell"></i></span>
@@ -83,13 +84,13 @@
                    </li>
                 </ul>
             </div>
-        </nav>
+        </div>
 
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Administrator Home Page <small>DashBoard </small></h1>
-                    <div class="alert alert-success alert-dismissable">
+                    <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         Welcome to RailwayTicketingSystem  administrator dashboard! 
                         <br />
@@ -97,32 +98,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="panel panel-primary">
+                <div class="col-lg-4">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-clock-o"></i>Informations</h3>
                         </div>
                         <div class="panel-body">
-                            <div class="row alert-success">
+                            <div class="row alert-info">
                                 <div class="col-xs-5 text-right">
                                     <p class="alerts-heading">${orders}</p>
                                     <p class="alerts-text">Orders</p>
                                 </div>
                             </div>
-                            <div class="row alert-success">
+                            <div class="row alert-info">
                                 <div class="col-xs-5 text-right">
                                     <p class="alerts-heading">${trains}</p>
                                     <p class="alerts-text">Trains</p>
                                 </div>
                             </div>
 
-                            <div class="row alert-success">
+                            <div class="row alert-info">
                                 <div class="col-xs-5 text-right">
                                     <p class="alerts-heading">${station}</p>
                                     <p class="alerts-text">Stations</p>
                                 </div>
                             </div>
-                            <div class="row alert-success">
+                            <div class="row alert-info">
                                 <div class="col-xs-5 text-right">
                                     <p class="alerts-heading">${count }</p>
                                     <p class="alerts-text">TotalUsers</p>
@@ -131,8 +132,9 @@
                         </div>
                     </div>
                 </div>
+                <!--  
                 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Users Activation Rate</h3>
                         </div>
@@ -143,7 +145,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>All Tickets</h3>
                         </div>
@@ -153,8 +155,8 @@
 
                     </div>
                 </div>
-	               <!--  <div class="col-lg-9">
-	                    <div class="panel panel-primary">
+	            <div class="col-lg-9">
+	                    <div class="panel panel-info">
 	                        <div class="panel-heading">
 	                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Estimations for last 30 days</h3>
 	                        </div>
@@ -162,12 +164,11 @@
 	                            <div id="shieldui-chart1"></div>
 	                        </div>
 	                    </div>
-	                </div> -->
-            </div>
-          <!--   <div class="row">
+	                </div> 
+          <div class="row">
              
                 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Budget</h3>
                         </div>
@@ -177,7 +178,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Purchases</h3>
                         </div>
@@ -186,10 +187,10 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div> 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Total Orders</h3>
                         </div>
@@ -199,6 +200,7 @@
                     </div>
                 </div>
             </div>
+            -->
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

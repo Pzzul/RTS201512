@@ -102,13 +102,11 @@ public class RTSController {
 		mav.addObject("title", "This is main page.");
 		return mav;
 	}
+	
 	@RequestMapping(value="main1", method=RequestMethod.GET)
 	public String hello1() {
 		return "hello2";
 	}
-
-
-
 
 	@RequestMapping(value = "/admin/order", method = RequestMethod.GET)
 	public ModelAndView adminOrder() {
@@ -212,6 +210,7 @@ public class RTSController {
 		mav.addObject("title", "Hello admin, welcome to train");
 		return mav;
 	}
+	
 	
 	@SuppressWarnings("deprecation")
 	@RequestMapping(value = "/admin/submitTransit", method = RequestMethod.POST)
