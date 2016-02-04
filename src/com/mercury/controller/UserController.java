@@ -163,6 +163,13 @@ public class UserController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/member/checkout/success")
+	public ModelAndView checkoutSuccess(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/checkout-success");
+		return mav;
+	}
+	
 	
 	@RequestMapping(value = "/member/search", method = RequestMethod.GET)
 	public ModelAndView searchPannel() {
@@ -339,7 +346,8 @@ public class UserController {
 
 		User user = getUser();
 		System.out.println("User ID:" + user.getUserId());
-		CartService cs = (CartService) session.getAttribute("cartService");
+		//CartService cs = (CartService) session.getAttribute("cartService");
+		CartService cs = this.getCartService(session);
 		if (cs.isEmpty())
 			return null;
 		Order order = this.orderService.createOrder(user, firstName, lastName,
