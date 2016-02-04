@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <!--  
+     
                 <div class="col-lg-4">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -155,6 +155,7 @@
 
                     </div>
                 </div>
+                <!-- 
 	            <div class="col-lg-9">
 	                    <div class="panel panel-info">
 	                        <div class="panel-heading">
@@ -200,21 +201,16 @@
                     </div>
                 </div>
             </div>
-            -->
+             -->
+        
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 
-    <!--
-        This section initializes the chart widgets and a grid component, 
-        which visualize records and allow sorting and paging. 
-        For more information visit: 
-        http://www.shieldui.com/documentation/javascript.chart/getting.started
-        http://www.shieldui.com/documentation/grid/javascript/getting.started
-        http://www.shieldui.com/documentation/datasource/javascript/getting.started
-    -->
+
+ 
     <script type="text/javascript">
         jQuery(function ($) {
         	var orderData = [];
