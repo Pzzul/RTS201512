@@ -127,8 +127,8 @@
 	</script>
 </head>
 <body>
-<div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div id="page-wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -139,7 +139,7 @@
                 <a class="navbar-brand" href="dashboard.html">Administrator Page</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
+                <ul class="nav navbar-nav navbar-center">
                   <!--   <li><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
                     <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
@@ -147,18 +147,18 @@
                     <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
                     <li class="active"><a href="bootstrap-elements.html"><i class="fa fa-list-ul"></i> Bootstrap Elements</a></li>
                     <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i> Bootstrap Grid</a></li> -->
-                    <li><a href="dashboard.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                    <li><a href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                     <li><a href="order.html"><i class="fa fa-tasks"></i> Order</a></li>                    
-                    <li><a href="train.html"><i class="fa fa-globe"></i> Train</a></li>
-                    <li><a href="schedule.html"><i class="fa fa-list-ol"></i> Schedule</a></li>
-                    <li class="active"><a href="station.html"><i class="fa fa-font"></i> Station</a></li> 
-                    <li><a href="userTable.html"><i class="fa fa-list-ul"></i> UserTable</a></li>  
+                    <li><a href="train.html"><i class="fa fa-train"></i> Train</a></li>
+                    <li><a href="schedule.html"><i class="fa fa-refresh fa-spin"></i> Schedule</a></li>
+                    <li class="active"><a href="station.html"><i class="fa fa-fort-awesome"></i> Station</a></li> 
+                    <li><a href="userTable.html"><i class="fa fa-table"></i> UserTable</a></li>                   
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">2</span> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">3</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-header">2 New Messages</li>
+                            <li class="dropdown-header">3 New Messages</li>
                             <li class="message-preview">
                                 <a href="#">
                                     <span class="avatar"><i class="fa fa-bell"></i></span>
@@ -186,12 +186,12 @@
                     </li>
                 </ul>
             </div>
-        </nav>
+        </div>
         <div id="page-wrapper">
        	  	<div class="row">
                 <div class="col-lg-12">
                     <h1>Administrator Station Page <small>Stations </small></h1>
-                    <div class="alert alert-success alert-dismissable">
+                    <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         Welcome to RailwayTicketingSystem  administrator station operation page! 
                         <br />

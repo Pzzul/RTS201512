@@ -112,8 +112,6 @@
 			<div>
 				Don't have an account? <a href="register.html" class="text-center">Create
 					one</a>
-
-
 			</div>
 			<!-- /.login-box-body -->
 		</div>

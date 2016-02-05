@@ -1,5 +1,6 @@
 package com.mercury.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import com.mercury.beans.Order;
 import com.mercury.beans.Station;
 import com.mercury.beans.Ticket;
 import com.mercury.beans.TrainSchedule;
+import com.mercury.beans.Transit;
 import com.mercury.beans.User;
 import com.mercury.beans.UserRole;
 import com.mercury.mail.MailUtil;
@@ -92,7 +94,7 @@ public class UserController {
 	public List<Order> getOrdersByUserId(@PathVariable int userId) {
 		return this.customUserDetailsService.getOrdersByUserId(userId);
 	}
-
+	
 	@RequestMapping(value = "/member/hello", method = RequestMethod.GET)
 	public @ResponseBody
 	ModelAndView memberHello() {
@@ -106,7 +108,7 @@ public class UserController {
 	@RequestMapping(value = "/member/dashboard", method = RequestMethod.GET)
 	public ModelAndView userDashBoard() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/member/dashboard");
+		mav.setViewName("/member/dashboardIndex");
 		mav.addObject("title", "Hello, "
 				+ CustomUserDetailsService.currentUserDetails().getUsername()
 				+ "! welcome to dashboard");
@@ -115,7 +117,7 @@ public class UserController {
 		mav.addObject("orders", this.getOrdersByUserId(this.getUser().getUserId()).size());
 		return mav;
 	}
-
+	
 	@RequestMapping(value = "/member/creditcard", method = RequestMethod.GET)
 	public ModelAndView userCreditcard() {
 		ModelAndView mav = new ModelAndView();
@@ -151,6 +153,55 @@ public class UserController {
 		System.out.println(CustomUserDetailsService.currentUserDetails()
 				.getUsername());
 		return mav;
+	}
+	
+	/**************************RTS201512*************************************/
+	@RequestMapping(value = "/member/dashCheckout", method = RequestMethod.GET)
+	public ModelAndView checkoutPannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashCheckout");
+		return mav;
+	}
+	
+	@RequestMapping(value="/member/checkout/success")
+	public ModelAndView checkoutSuccess(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/checkout-success");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value = "/member/search", method = RequestMethod.GET)
+	public ModelAndView searchPannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashSearch");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/cart-page", method = RequestMethod.GET)
+	public ModelAndView cartPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/dashCart");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/profile", method = RequestMethod.GET)
+	public ModelAndView profilePannel() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/member/profile1");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/member/profileData", method = RequestMethod.GET)
+	@ResponseBody
+	public User getprofile() {
+		return getUser();
+	}
+	
+	@RequestMapping(value = "/resource/clear/cart", method = RequestMethod.GET)
+	@ResponseBody
+	public void clearCart(HttpSession session){
+		getCartService(session).clearCart();
 	}
 
 	@RequestMapping(value = "/register/newuser", method = RequestMethod.POST)
@@ -255,16 +306,11 @@ public class UserController {
 	@RequestMapping(value = "/member/order", method = RequestMethod.GET)
 	public ModelAndView memberOrder() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/member/order");
-		mav.addObject("title", "Hello, "
-				+ CustomUserDetailsService.currentUserDetails().getUsername());
-		mav.addObject("username", this.getUser().getEmail());
-		mav.addObject("orderHistory",
-		this.getOrdersByUserId(this.getUser().getUserId()));
+		mav.setViewName("/member/order1");
 		return mav;
 	}
 
-	@RequestMapping(value = "/member/checkout", method = { RequestMethod.POST,
+	@RequestMapping(value = "/member/checkout1", method = { RequestMethod.POST,
 			RequestMethod.GET })
 	public ModelAndView memberCheckout() {
 		ModelAndView mav = new ModelAndView();
@@ -277,11 +323,21 @@ public class UserController {
 		return mav;
 	}
 	
+	//rts201512
+	@RequestMapping(value = "/resource/get/time-by-station-train", method = RequestMethod.POST)
+	@ResponseBody
+	public Timestamp getTransitByTrainAndStation(HttpServletRequest request){
+		int trainNo = Integer.parseInt(request.getParameter("trainNo"));
+		int stationNo = Integer.parseInt(request.getParameter("stationNo"));
+		Transit t = railwayService.getTransitByStationAndTrainNo(stationNo, trainNo);
+		return t.getArrivalTime();
+	}
 	
 
 	@RequestMapping(value = "/resource/order/submit/", method = RequestMethod.POST)
 	public @ResponseBody
 	Order memberSubmitOrder(HttpServletRequest request, HttpSession session) {
+		
 		String firstName = (String) request.getParameter("firstName");
 		String lastName = (String) request.getParameter("lastName");
 		String cardNo = (String) request.getParameter("cardNo");
@@ -294,7 +350,8 @@ public class UserController {
 
 		User user = getUser();
 		System.out.println("User ID:" + user.getUserId());
-		CartService cs = (CartService) session.getAttribute("cartService");
+		//CartService cs = (CartService) session.getAttribute("cartService");
+		CartService cs = this.getCartService(session);
 		if (cs.isEmpty())
 			return null;
 		Order order = this.orderService.createOrder(user, firstName, lastName,
@@ -365,10 +422,10 @@ public class UserController {
 		mav.addObject("station", this.railwayService.getStations().size());
 		mav.addObject("orders", this.railwayService.getOd().queryAllOrders().size());
 		mav.addObject("trains", this.railwayService.getTd().queryAll().size());
-//		mav.addObject("train1", tsl.get(0).getAvailableTickets());
-//		mav.addObject("train2", tsl.get(4).getAvailableTickets());
-//		mav.addObject("train3", tsl.get(10).getAvailableTickets());
-//		mav.addObject("train4", tsl.get(27).getAvailableTickets());
+		mav.addObject("train1", tsl.get(0).getAvailableTickets());
+		mav.addObject("train2", tsl.get(4).getAvailableTickets());
+		mav.addObject("train3", tsl.get(10).getAvailableTickets());
+		//mav.addObject("train4", tsl.get(27).getAvailableTickets());
 		mav.addObject("actived", this.customUserDetailsService.countActivedUser());
 		return mav;
 	}
