@@ -136,7 +136,7 @@
 	  	  			departureDateTime: $scope.departureDate
 	  	  	};
 		    
-		   // alert($scope.departureStation.originalObject.stationNo);
+		   // alert($scope.departureStation.originalObject.stationNo+"WTF");
     		$http({
     			method: "POST",
     			url: "/MyRTS/resource/schedule/get/by-stations-date",
