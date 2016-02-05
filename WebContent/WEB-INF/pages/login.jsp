@@ -37,7 +37,8 @@
 <script src="<c:url value="/resource/md5.js"/>"></script>
 <style>
 .body-class {
-	background-image: url(/MyRTS/resource/image/maintheme.jpg);
+	//background-image: url(/MyRTS/resource/image/maintheme.jpg);
+	background-image: url(/MyRTS/resource/image/trainlogin2_wz.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -55,14 +56,15 @@
 	<header id="top" class="header">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="/MyRTS/main1.html" style="color: #3c8dbc"><b>Railway
-					Ticketing System</b></a>
+			<a href="/MyRTS/main1.html" style="color: #3c8dbc"><b>RTS
+					System</b></a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
 			<!-- <p class="login-box-msg">Sign in to start your session</p> -->
 			<form name="f" action="<c:url value='j_spring_security_check'/>"
 				method="post" id="login-form">
+				
 				<div class="form-group has-feedback">
 					<input type="username" name="j_username" id="j_username"
 						class="form-control" placeholder="E-mail Address"> <span
@@ -76,14 +78,15 @@
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row">
-					<div class="col-xs-8">
-						<div class="checkbox icheck">
+					<!--<div class="col-xs-8">
+						 <div class="checkbox icheck">
 							<label> <input type="checkbox"> Remember Me
 							</label>
-						</div>
-					</div>
+						</div> 
+					</div>-->
 					<!-- /.col -->
-					<div class="col-xs-4">
+					
+					<div class="col-lg-12">
 						<button type="submit" id="signin"
 							class="btn btn-primary btn-block btn-flat" onclick="encode()">Sign
 							In</button>

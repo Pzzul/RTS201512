@@ -26,7 +26,8 @@
     <script src="<c:url value="/resource/js/bootstrap/js/bootstrap.min.js"/>"></script>
     <!-- iCheck -->
     <script src="<c:url value="/resource/plugins/iCheck/icheck.min.js"/>"></script>
-
+	<!-- Angular js -->
+	<script src="<c:url value="/resource/js/angular/angular.js"/>"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,35 +36,47 @@
     <![endif]-->
   <style>
   .body-class {
-  	background-image:url(resource/image/Steam_train.jpg);
+  	background-image:url(resource/image/trainlogin2_wz.jpg);
   	background-size: cover;
     background-repeat: no-repeat;
 	}
   </style>
-  
-  </head>
+  <script>
+	angular.module("resetModule", []).controller("resetController",
+			function($scope, $http) {
+			});
+  </script>
+</head>
   
   <body class="hold-transition login-page body-class"  >
   <header id="top" class="header">
     <div class="login-box">
-      <div class="login-logo">
-      <a href="/MyRTS/main.html" style="color: #3c8dbc"><b>RailwayTicketingSystem</b></a>
-      </div><!-- /.login-logo -->
-      <div id="forgot-password">
-      	<p>Can't remember your password? Enter you e-mail address and we'll send you a code to reset your password.</p>
-      </div>
-      <div class="login-box-body">
+		<div class="login-logo">
+			<a href="/MyRTS/main.html" style="color: #3c8dbc"><b>RTS
+					System</b></a>
+		</div>
+		<div class="login-box-body">
         <!-- <p class="login-box-msg">Sign in to start your session</p> -->
-
-        <form name="f" action="<c:url value='resetpassword/reset'/>" method="get" id="login-form">
-
-          <div class="form-group has-feedback">
-            <input type="username" name="email" id="j_username" class="form-control" placeholder="E-mail Address">
+			
+			<!-- /.login-logo -->
+			<div id="reset-password">
+				<p>Reset Password</p>
+			</div>
+			<form name="f" action="<c:url value='resetpassword/reset'/>" method="POST" id="login-form" ng-app="resetModule" 
+        	ng-controller="resetController" ng-model="f">
+	      <div id="forgot-password">
+	      	<p>Please enter you e-mail address</p>
+	      </div>
+          <div class="form-group has-feedback"
+          	ng-class="{'has-error':resetForm.email.$dirty && registerForm.email.$error.required,'has-warning':registerForm.email.$error.pattern}">
+            <input type="email" name="email" class="form-control"
+            	 ng-model="email"  id="j_username"  placeholder="E-mail Address" ng-pattern="/.*.@..*/" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-4">
-              <button type="submit" id="reset" class="btn btn-primary btn-block btn-flat">Reset</button>
+              <button type="submit" id="reset" class="btn btn-primary btn-block btn-flat" 
+              	ng-disabled="resetForm.$invalid">Reset</button>
             </div><!-- /.col -->        
             <a href="/MyRTS/login.html">Cancel</a>
           </div>
@@ -84,10 +97,11 @@
       });
     </script> -->
     <style>
-    	#forgot-password{
-    		font-size:15px;
-    		color: #f2f2f2;
+    	#reset-password{
+    		font-size:25px;
+    		color: #3c8dbc;
     	}	
+    	
     </style>
   </body>
 </html>
