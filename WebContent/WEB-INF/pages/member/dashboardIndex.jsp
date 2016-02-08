@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="<c:url value="/resource/newSource/js/jquery.js"/>"></script>   
     <script type="text/javascript" src="<c:url value="/resource/newSource/js/bootstrap.min.js"/>"></script>
     
-    <script src="/resource/newSource/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="<c:url value="/resource/newSource/js/jquery.easing.min.js"/>"></script>
     <script src="<c:url value="/resource/newSource/js/classie.js"/>"></script>
     <script src="<c:url value="/resource/newSource/js/cbpAnimatedHeader.min.js"/>"></script>
     <!-- Contact Form JavaScript -->

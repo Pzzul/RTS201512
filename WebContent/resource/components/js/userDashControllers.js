@@ -288,7 +288,7 @@ dashControllers.controller("dashCheckoutCtrl",['$scope', '$http', '$location', f
   		}).success(function (data) {
   			 console.log(data);
   			 $scope.$emit('refresh cart');
-  			 $location.path('/checkout/success');
+  			 $location.path('/orders');
     	});
 	};
 		
