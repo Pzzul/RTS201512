@@ -38,7 +38,7 @@
 <script src="<c:url value="/resource/js/angular/angular.js"/>"></script>
  <style>
   .body-class {
-  	background-image:url(resource/image/traintrack1.jpg);
+  	background-image:url(resource/image/trainlogin2_wz.jpg);
   	background-size: cover;
     background-repeat: no-repeat;
 	}
@@ -69,7 +69,7 @@
 <body class="hold-transition register-page body-class">
 	<div class="register-box">
 		<div class="register-logo">
-			<a href="/MyRTS/main.html" style="color:#3c8dbc"><b>Railway Ticketing System</b></a>
+			<a href="/MyRTS/main.html" style="color:#3c8dbc"><b>RTS System</b></a>
 		</div>
 
 		<div class="register-box-body">

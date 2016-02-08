@@ -225,17 +225,20 @@ public class UserController {
 		System.out.println(user);
 		return mav;
 	}
+	 
+	 
 
-	@RequestMapping(value = "/resetpassword/reset", method = RequestMethod.GET)
+	@RequestMapping(value = "/resetpassword/reset", method = RequestMethod.POST)
 	public ModelAndView resetpassword(String email) {
 		System.out.println(email);
-		ModelAndView mav = new ModelAndView();
 		User user = this.customUserDetailsService.findbyemail(email);
-		mav.setViewName("/hello2");
 		user.setEnable(false);
-		mav.addObject("title", "This is reset password page.");
 		MailUtil.sendpasswordresetMail(user);
 		System.out.println(user);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/hello3");
+		mav.addObject("title", "This is reset password page.");
 		return mav;
 	}
 	
@@ -245,11 +248,11 @@ public class UserController {
 
 		User user = this.customUserDetailsService.activeUser(activation);
 		if (user == null) {
-			mav.setViewName("/hello2");
+			mav.setViewName("/hello3");
 			mav.addObject("title", "Activation code expired!");
 			return mav;
 		}
-		mav.setViewName("/hello2");
+		mav.setViewName("/hello3");
 		mav.addObject("title", "Congratulations, " + user.getEmail()
 				+ "! Successfully activated!");
 		user.setEnable(true);
@@ -263,13 +266,14 @@ public class UserController {
 		return mav;
 	}
 
+ 
 	@RequestMapping(value = "/resetpassword/reset/{md5}", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView resetpassword1(@PathVariable String md5, String password) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		System.out.println(md5);
 		User user = this.customUserDetailsService.findbypassword(md5);
 		if (user == null) {
-			mav.setViewName("/hello2");
+			mav.setViewName("/hello3");
 			mav.addObject("title", "User not exsit!");
 			return mav;
 		}

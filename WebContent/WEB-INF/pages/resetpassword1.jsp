@@ -38,7 +38,7 @@
 <script src="<c:url value="/resource/js/angular/angular.js"/>"></script>
  <style>
   .body-class {
-  	background-image:url(/MyRTS/resource/image/Steam_train.jpg);
+  	background-image:url(/MyRTS/resource/image/trainlogin2_wz.jpg);
   	background-size: cover;
     background-repeat: no-repeat;
 	}
@@ -69,7 +69,7 @@
 <body class="hold-transition register-page body-class">
 	<div class="register-box">
 		<div class="register-logo">
-			<a href="/MyRTS/main.html" style="color:#3c8dbc"><b>Railway Ticketing System</b></a>
+			<a href="/MyRTS/main.html" style="color:#3c8dbc"><b>RTS System</b></a>
 		</div>
 
 		<div class="register-box-body">
@@ -80,6 +80,9 @@
 				id="register-form">
 				<div class="form-group has-feedback"
 					ng-class="{	'has-error':registerForm.password.$dirty && registerForm.password.$error.required,'has-warning':registerForm.password.$error.minlength ||registerForm.password.$error.maxlength}">
+				    <div id="forgot-password">
+			      	  <p>New password</p>
+			        </div>
 					<input type="password" name="password" class="form-control"
 						placeholder="Password" ng-minlength="5" ng-maxlength="20"
 						ng-model="password" required> <span
@@ -87,6 +90,9 @@
 				</div>
 				<div class="form-group has-feedback"
 					ng-class="{'has-error': (registerForm.password.$modelValue !== registerForm.repassword.$modelValue) && registerForm.repassword.$dirty}">
+					<div id="forgot-password">
+			      	  <p>Confirm new password</p>
+			        </div>
 					<input type="password" name="repassword" class="form-control"
 						placeholder="Confim Password" ng-model="repassword"> <span
 						class="glyphicon glyphicon-log-in form-control-feedback"></span>
