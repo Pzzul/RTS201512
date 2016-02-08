@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-clock-o"></i>Informations</h3>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <!--  
+     
                 <div class="col-lg-4">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -144,7 +144,8 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4">
+         
+                <div class="col-lg-5">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>All Tickets</h3>
@@ -155,6 +156,7 @@
 
                     </div>
                 </div>
+      
 	            <div class="col-lg-9">
 	                    <div class="panel panel-info">
 	                        <div class="panel-heading">
@@ -165,8 +167,9 @@
 	                        </div>
 	                    </div>
 	                </div> 
+	                  
           <div class="row">
-             
+            <!--  
                 <div class="col-lg-4">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -177,6 +180,7 @@
                         </div>
                     </div>
                 </div>
+            -->
                 <div class="col-lg-4">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -200,21 +204,15 @@
                     </div>
                 </div>
             </div>
-            -->
+            
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 
-    <!--
-        This section initializes the chart widgets and a grid component, 
-        which visualize records and allow sorting and paging. 
-        For more information visit: 
-        http://www.shieldui.com/documentation/javascript.chart/getting.started
-        http://www.shieldui.com/documentation/grid/javascript/getting.started
-        http://www.shieldui.com/documentation/datasource/javascript/getting.started
-    -->
+
+ 
     <script type="text/javascript">
         jQuery(function ($) {
         	var orderData = [];
@@ -292,7 +290,8 @@
                     data: [
                         ["train1", train1],
                         ["train2", train2],
-                        { collectionAlias: "train3", y: train3, sliced: true },
+                        ["train3", train3],
+                   //     { collectionAlias: "train3", y: train3, sliced: true },
                         ["train4", train4]
                        
                     ]
@@ -336,8 +335,6 @@
                 ]
             });
         });
-    </script>
-    
-    
+    </script>  
 </body>
 </html>
