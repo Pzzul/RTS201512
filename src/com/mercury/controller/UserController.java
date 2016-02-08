@@ -361,10 +361,17 @@ public class UserController {
 		mav.addObject("station", this.railwayService.getStations().size());
 		mav.addObject("orders", this.railwayService.getOd().queryAllOrders().size());
 		mav.addObject("trains", this.railwayService.getTd().queryAll().size());
-		mav.addObject("train1", tsl.get(0).getAvailableTickets());
+		mav.addObject("train1", tsl.get(0).getAvailableTickets());//0   4    10    27
+		for(int i=0;i<tsl.size();i++){
+			System.out.println(tsl.get(i).getAvailableTickets());
+		}
+		System.out.print("____---asdfawefaskldfhilfhiua_________________-------"+tsl.get(0).getAvailableTickets());
 		mav.addObject("train2", tsl.get(4).getAvailableTickets());
+		
 		mav.addObject("train3", tsl.get(10).getAvailableTickets());
-		//mav.addObject("train4", tsl.get(27).getAvailableTickets());
+		
+		mav.addObject("train4", tsl.get(19).getAvailableTickets());
+		
 		mav.addObject("actived", this.customUserDetailsService.countActivedUser());
 		return mav;
 	}
