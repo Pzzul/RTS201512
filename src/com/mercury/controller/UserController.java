@@ -426,13 +426,10 @@ public class UserController {
 		for(int i=0;i<tsl.size();i++){
 			System.out.println(tsl.get(i).getAvailableTickets());
 		}
-		System.out.print("____---asdfawefaskldfhilfhiua_________________-------"+tsl.get(0).getAvailableTickets());
-		mav.addObject("train2", tsl.get(4).getAvailableTickets());
-		
-		mav.addObject("train3", tsl.get(10).getAvailableTickets());
-		
-		mav.addObject("train4", tsl.get(19).getAvailableTickets());
-		
+		mav.addObject("train2", tsl.get(1).getAvailableTickets());		
+		mav.addObject("train3", tsl.get(3).getAvailableTickets());		
+		mav.addObject("train4", tsl.get(5).getAvailableTickets());	
+		mav.addObject("train5", tsl.get(7).getAvailableTickets());
 		mav.addObject("actived", this.customUserDetailsService.countActivedUser());
 		return mav;
 	}

@@ -234,7 +234,8 @@
         	train2 = ${train2};
         	train3 = ${train3};
         	train4 = ${train4};
-            var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
+        	train5 = ${train5};
+            var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 39, 21, 35, 32, 61, 67],
                 visit1 = [actived],
                 visit2 = [newuser],
                 budget = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57],
@@ -245,8 +246,8 @@
                     text: "Visitors"
                 },
                 exportOptions: {
-                    image: false,
-                    print: false
+                    image: true,
+                    print: true
                 },
                 dataSeries: [{
                     seriesType: "area",
@@ -291,8 +292,10 @@
                         ["train1", train1],
                         ["train2", train2],
                         ["train3", train3],
-                   //     { collectionAlias: "train3", y: train3, sliced: true },
-                        ["train4", train4]
+                //      { collectionAlias: "train3", y: train3, sliced: true },
+                        ["train4", train4],
+                        ["train5", train5],
+   
                        
                     ]
                 }]
