@@ -116,7 +116,7 @@
 						<ul
 							class="nav navbar-nav navbar-right responsive-nav main-nav-list">
 							<li><a href="#home">Home</a></li>
-							<li><a href="#booking">Booking</a></li>
+							<li><a href="#booking">Search</a></li>
 							<!-- <li><a href="#features">Features</a></li> -->
 							<li><a href="#contact">Contact</a></li>
 							<sec:authorize access="isAnonymous()">
